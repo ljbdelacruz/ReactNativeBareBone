@@ -1,34 +1,22 @@
-import React from 'react';
-import { StyleSheet, Text, View, TextInput } from 'react-native';
+import React, { Component } from 'react';
+import {
+  Platform,
+  StyleSheet,
+  Text,
+  View
+} from 'react-native';
+import {createStackNavigator, createAppContainer} from 'react-navigation';
+import LoginScreen from './Pages/Login/Login.page';
+import DashboardScreen from './Pages/Dashboard/Dashboard'
 
-export default class App extends React.Component {
-  iterateElement(list){
-    console.log("list");
-    const elements=list.map((element)=>{
-      console.log(element);
-      return (
-        <Text>Item: {element}</Text>
-      );
-    })
-    return elements;
-  }
+const MainNavigator = createStackNavigator({
+  Login: {screen: LoginScreen},
+  Dashboard: {screen: DashboardScreen},
+});
 
-  render() {
-    const list=["what", "the", "hell"]
-    return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        { this.iterateElement(list) }
-        <Text>End Of List</Text>
-        <TextInput
-            style={styles.textInput}
-            placeholder="Type here to translate!"
-            onChangeText={(text) => this.setState({text})}
-          />
-      </View>
-    );
-  }
-}
+const App = createAppContainer(MainNavigator);
+export default App;
+
 
 const styles = StyleSheet.create({
   container: {
@@ -41,5 +29,4 @@ const styles = StyleSheet.create({
     width:300,
     height:40
   }
-
 });

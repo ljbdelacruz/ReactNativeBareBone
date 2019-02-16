@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import { View, Text, Button } from 'react-native';
 
-class LoginScreen extends React.Component {
+class DashboardScreen extends React.Component {
   static navigationOptions = {
-    title: 'Welcome',
+    title: 'Dashboard',
   };
   render() {
     const {navigate} = this.props.navigation;
     return (
-      <Text>Login Page</Text>
+      <Text>Dashboard Page</Text>
     );
   }
 }
-export default LoginScreen;
+
+export default DashboardScreen;

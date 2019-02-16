@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import { View, Text, Button } from 'react-native';
 
-class LoginScreen extends React.Component {
+class MovieDetailsScreen extends React.Component {
   static navigationOptions = {
-    title: 'Welcome',
+    title: 'MovieDetails',
   };
   render() {
     const {navigate} = this.props.navigation;
     return (
-      <Text>Login Page</Text>
+      <Text>MovieDetails Page</Text>
     );
   }
 }
-export default LoginScreen;
+
+export default MovieDetailsScreen;
